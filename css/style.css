@@ -1,0 +1,54 @@
+@font-face{
+  font-family: Mercurio;
+  src: url(../font/Mercurio-NormaleSchermo.otf);
+  }
+
+html, body, canvas, .test {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow-x: hidden;
+}
+
+body{
+  scroll-snap-type: y mandatory;
+}
+
+.test{
+  scroll-snap-align: center;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0;
+}
+
+.row{
+  width: 100% !important;
+  padding: 30px !important;
+  font-size: 1.7vh;
+  line-height: 120%;
+  margin: 0px !important;
+  overflow: hidden;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.break{
+  word-break:break-all;
+}
+
+a{
+  color: black !important;
+}
+
+
