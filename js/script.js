@@ -4,92 +4,104 @@ const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
 const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientWidth, 1, 1000);
 const mouse = new THREE.Vector2(0.2, 0.4);
-
+const array = [
+    "img/aaa.jpg",
+    "img/background.jpg",
+    "img/m-background.jpg"
+]
 var dogTexture;
-if (window.innerWidth > 900)
-  dogTexture = new THREE.TextureLoader().load('img/background.jpg');
-else if (window.innerWidth < 900)
-  dogTexture = new THREE.TextureLoader().load('img/m.background.jpg');
-
+if (window.innerWidth > 900) {
+    var x = (Math.floor(Math.random() * (20 - 1) + 1));
+    if (x==2)
+        dogTexture = new THREE.TextureLoader().load('img/jfrappo.jpg');
+    else
+        dogTexture = new THREE.TextureLoader().load('img/background.jpg');
+}
+else if (window.innerWidth < 900){
+    var x = (Math.floor(Math.random() * (3 - 1) + 1));
+    dogTexture = new THREE.TextureLoader().load(array[x]);
+}
 var quad = new THREE.Mesh(
-  new THREE.PlaneGeometry(2, 2),
-  new THREE.ShaderMaterial({
-    vertexShader: document.getElementById('vertex-shader').textContent,
-    fragmentShader: document.getElementById('fragment-shader').textContent,
-    depthWrite: false,
-    depthTest: false,
-    uniforms: {
-      dog: {
-        type: "t",
-        value: dogTexture
-      },
-      delta: {
-        value: 1.0
-      },
-      mouse: {
-        value: mouse
-      },
-      //filter: {
-      //  value: true
-      //},
-      speed: {
-        value: 0.5
-      }
-    }
-  })
+    new THREE.PlaneGeometry(2, 2),
+    new THREE.ShaderMaterial({
+        vertexShader: document.getElementById('vertex-shader').textContent,
+        fragmentShader: document.getElementById('fragment-shader').textContent,
+        depthWrite: false,
+        depthTest: false,
+        uniforms: {
+            dog: {
+                type: "t",
+                value: dogTexture
+            },
+            delta: {
+                value: 1.0
+            },
+            mouse: {
+                value: mouse
+            },
+            //filter: {
+            //  value: true
+            //},
+            speed: {
+                value: 0.5
+            }
+        }
+    })
 );
 scene.add(quad);
 
 function onResize() {
-  renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-  camera.aspect = canvas.clientWidth / canvas.clientHeight;
-  camera.updateProjectionMatrix();
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    camera.updateProjectionMatrix();
 }
 
 function onMouseMove(e) {
-  const x = (e.clientX / (window.innerWidth * 0.5)) - 1;
-  const y = -1 * (e.clientY / (window.innerHeight * 0.5)) + 1;
-  updateMouse(x, y);
+    const x = (e.clientX / (window.innerWidth * 0.5)) - 1;
+    const y = -1 * (e.clientY / (window.innerHeight * 0.5)) + 1;
+    updateMouse(x, y);
 }
+
 function onTouchMove(e) {
-  const x = (e.touches[0].clientX / (window.innerWidth * 0.5)) - 1;
-  const y = -1 * (e.touches[0].clientY / (window.innerHeight * 0.5)) + 1;
-  updateMouse(x, y);
+    const x = (e.touches[0].clientX / (window.innerWidth * 0.5)) - 1;
+    const y = -1 * (e.touches[0].clientY / (window.innerHeight * 0.5)) + 1;
+    updateMouse(x, y);
 }
+
 function updateMouse(x, y) {
-  TweenMax.to(mouse, 2, {
-    x: x,
-    y: y,
-    onUpdate: function () {
-      quad.material.uniforms.mouse.value = mouse;
-    }
-  })
+    TweenMax.to(mouse, 2, {
+        x: x,
+        y: y,
+        onUpdate: function () {
+            quad.material.uniforms.mouse.value = mouse;
+        }
+    })
 }
 
 function render(a) {
-  requestAnimationFrame(render);
+    requestAnimationFrame(render);
 
-  quad.material.uniforms.delta.value = a;
+    quad.material.uniforms.delta.value = a;
 
-  renderer.render(scene, camera);
+    renderer.render(scene, camera);
 }
 
 // Start video
-if (window.innerWidth > 910)
-  navigator.mediaDevices.getUserMedia({
-    video: {
-      facingMode: "environment"
-    },
-    audio: false
-  }).then(function (stream) {
-    videoDom.srcObject = stream;
-    videoDom.onloadedmetadata = function (e) {
-      videoDom.play();
-      quad.material.uniforms.dog.value = new THREE.VideoTexture(videoDom);
-    };
-  }).catch(function (error) {
-    console.log(error);
-  });
+if (! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    navigator.mediaDevices.getUserMedia({
+        video: {
+            facingMode: "environment"
+        },
+        audio: false
+    }).then(function (stream) {
+        videoDom.srcObject = stream;
+        videoDom.onloadedmetadata = function (e) {
+            videoDom.play();
+            quad.material.uniforms.dog.value = new THREE.VideoTexture(videoDom);
+        };
+    }).catch(function (error) {
+        console.log(error);
+    });
 
 onResize();
 window.addEventListener('resize', onResize);
@@ -102,5 +114,3 @@ window.addEventListener('touchmove', onTouchMove);
 // quad.material.uniforms.speed.value = parseInt(this.value) / 100;
 // })
 requestAnimationFrame(render);
-
-

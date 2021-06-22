@@ -2,202 +2,131 @@
 <html lang="en">
 
 <head>
-  <script>
-    if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) 
-      window.location.href = 'm.index.html';
-    
-    window.addEventListener("resize", function (event) {
-      if (window.innerWidth < 900) window.location.href = 'm.index.html';
-    });
-  </script>
-  <meta charset="UTF-8">
-  <title>CH-RO-MO</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+            window.location.href = 'm.index.html';
+
+        window.addEventListener("resize", function (event) {
+            if (window.innerWidth < 900) window.location.href = 'm.index.html';
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>CH-RO-MO</title>
+    <link rel="shortcut icon" href="img/favicon.jpeg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
-
-  <div class="test">
-    <canvas id="canvas"></canvas>
-    <video id="video"></video>
-  </div>
-
-  <div id="header" class="row">
-    <div class="col-2">CH</div>
-    <div class="col-2">RO</div>
-    <div class="col-2">MO</div>
-    <div class="col-2"></div>
-    <div class="col-2"></div>
-    <div class="col-2">INFO</div>
-  </div>
-
-  <div id="content" class="row test">
-    <div class="col-2">
-      <br><br>
-      CH RO MO
-      <br>
-      Piazza Indipendenza, 4
-      60035 Jesi AN
-      ITALY
-      <br><br>
-      Chris Rocchegiani<br>
-      <a href="chrisrocchegiani.it" class="break">chrisrocchegiani.it</a><br>
-      <a href="mailto:chris.rocchegiani@gmail.com" class="break">roberto.montani@gmail.com</a><br>
-      CF&emsp;RCCCRS77P68E388D<br>
-      PI&emsp;02586750420
-      <br><br>
-      Roberto Montani<br>
-      <a href="robertomontani.com" class="break">robertomontani.com</a><br>
-      <a href="mailto:roberto.montani@gmail.com" class="break">roberto.montani@gmail.com</a><br>
-      CF&emsp;MNTRRT81S03H769X<br>
-      PI&emsp;01729550440
-      <br><br>
-      <a href="mailto:">mail@ch-ro-mo.com</a>
-      <a href="instagram.com/ch_ro_mo">instagram.com/ch_ro_mo</a>
-      <br><br>
-      For internships, write your
-      motivational letter, attach your
-      portfolio and your CV and send it to:
-      <a href="mailto:mail@ch-ro-mo.com">mail@ch-ro-mo.com</a>.<br>
-      Your application will be considered
-      in order to internships calendar.
+    <div class="block">
+        <canvas id="canvas"></canvas>
+        <video id="video"></video>
     </div>
-    <div class="col-2">
 
-      <br><br>
-      <sup>ENG</sup> CH RO MO is an independent
-      studio based in Jesi (AN—
-      ITALY), founded in 2015 by Chris
-      Rocchegiani (painter, graphic
-      designer and graphic design
-      professor) and Roberto Montani
-      (graphic designer and graphic
-      design teacher).
-      <br><br>
-      The studio plays with new media
-      and languages, embracing Art and
-      Design as research tools.
-      It mainly works for commissioned
-      projects in the commercial and
-      cultural fields, focusing on editorial
-      design and identity systems.
-      CH RO MO has been awarded and
-      featured in international contests.
-      <br><br><br>
-      <sup>ITA</sup> CH RO MO è uno studio
-      indipendente con sede a Jesi (AN —
-      ITALIA), fondato nel 2015 da Chris
-      Rocchegiani (pittrice, progettista
-      grafico e professoressa) e Roberto
-      Montani (progettista grafico e
-      insegnante).
-      <br><br>
-      Lo studio gioca con i nuovi media
-      e linguaggi, abbracciando Arte
-      e Design come strumenti di
-      ricerca. Lavora principalmente
-      per progetti su commissione in
-      ambito commerciale e culturale,
-      concentrandosi sul design editoriale
-      e sui sistemi di identità.
-      CH RO MO è stato premiato in
-      concorsi internazionali.
+    <div id="header" class="row">
+        <div class="col-2" id="aaa">CH</div>
+        <div class="col-2">RO</div>
+        <div class="col-2">MO</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-2" id="info"><a href="#content">INFO</a></div>
     </div>
-    <div class="col-2">
 
-      <br><br>
-      Chris and Roberto teach graphic
-      design at ACCA Academy in Jesi.
-      Chris teaches Basic Design class
-      at the Camerino University Unicam
-      SAAD in Ascoli Piceno.
-      <br><br>
-      CH RO MO is currently collaborating
-      with Quodlibet Edizioni for special
-      editorial projects and with Metodo
-      Milano for art-related projects.
-      <br><br>
-      Selected Clients, in alphabetical
-      order: Archivio Mario Dondero,
-      Azienda Agricola Valter Mattoni,
-      BACO Base Arte Contemporanea,
-      BAO Publishing, Casa Sponge,
-      Casa Testori, Claudio Corfone,
-      Cifone, Comune di Ancona —
-      La Mole, Comune di Bologna,
-      Comune di Chiaravalle, Comune
-      di Grottammare, Comune di
-      Massignano, CNA, Galleria Elena,
-      Galleria Raffaella Cortese, ICCD
-      Fotografia, Italian Council, Karussell,
-      Maicol & Mirco, MAXXI, MiC, Micro.,
-      Paolo Brunelli, Rulez, Skinnerboox,
-      Unicam SAAD, Unopervolta,
-      Zanotta.
+    <div id="content" class="row block">
+        <div class="col-2">
+            CH
+            <br><br> CH RO MO
+            <br> Piazza Indipendenza, 4 60035 Jesi AN ITALY
+            <br><br> Chris Rocchegiani<br>
+            <a target="_blank" href="http://chrisrocchegiani.it" class="break">chrisrocchegiani.it</a><br>
+            <a href="mailto:chris.rocchegiani@gmail.com" class="break">chris.rocchegiani@gmail.com</a><br>
+            CF: RCCCRS77P68E388D
+            <br>
+            PI: 02586750420
+            <br><br> Roberto Montani<br>
+            <a target="_blank" href="http://robertomontani.com" class="break">robertomontani.com</a><br>
+            <a href="mailto:roberto.montani@gmail.com" class="break">roberto.montani@gmail.com</a><br>
+            CF: MNTRRT81S03H769X
+            <br> PI: 01729550440
+            <br><br>
+            <a href="mailto:">mail@ch-ro-mo.com</a>
+            <a target="_blank" href="http://instagram.com/ch_ro_mo">instagram.com/ch_ro_mo</a>
+            <br><br> For internships, write your motivational letter, attach your portfolio and your CV and send it to:
+            <a href="mailto:mail@ch-ro-mo.com">mail@ch-ro-mo.com</a>.<br> Your application will be considered in order
+            to internships calendar.
+        </div>
+        <div class="col-2" id="xd">
+            RO
+            <br><br>
+            (ENG) CH RO MO is an independent studio based in Jesi (AN— ITALY), founded in 2015 by Chris
+            Rocchegiani (painter, graphic designer and graphic design professor) and Roberto Montani (graphic designer
+            and graphic design teacher).
+            <br><br> The studio plays with new media and languages, embracing Art and Design as research tools. It
+            mainly works for commissioned projects in the commercial and cultural fields, focusing on editorial design
+            and identity systems. CH RO MO
+            has been awarded and featured in international contests.
+            <br><br><br>
+            (ITA) CH RO MO è uno studio indipendente con sede a Jesi (AN — ITALIA), fondato nel 2015 da Chris
+            Rocchegiani (pittrice, progettista grafico e professoressa) e Roberto Montani (progettista grafico e
+            insegnante).
+            <br><br> Lo studio gioca con i nuovi media e linguaggi, abbracciando Arte e Design come strumenti di
+            ricerca. Lavora principalmente per progetti su commissione in ambito commerciale e culturale, concentrandosi
+            sul design editoriale e sui sistemi
+            di identità. CH RO MO è stato premiato in concorsi internazionali.
+        </div>
+        <div class="col-2">
+            MO
+            <br><br> Chris and Roberto teach graphic design at ACCA Academy in Jesi. Chris teaches Basic Design class at
+            the Camerino University Unicam SAAD in Ascoli Piceno.
+            <br><br> CH RO MO is currently collaborating with Quodlibet Edizioni for special editorial projects and with
+            Metodo Milano for art-related projects.
+            <br><br> Selected Clients, in alphabetical order: Archivio Mario Dondero, Azienda Agricola Valter Mattoni,
+            BACO Base Arte Contemporanea, BAO Publishing, Casa Sponge, Casa Testori, Claudio Corfone, Cifone, Comune di
+            Ancona — La Mole, Comune
+            di Bologna, Comune di Chiaravalle, Comune di Grottammare, Comune di Massignano, CNA, Galleria Elena,
+            Galleria Raffaella Cortese, ICCD Fotografia, Italian Council, Karussell, Maicol & Mirco, MAXXI, MiC, Micro.,
+            Paolo Brunelli, Rulez, Skinnerboox,
+            Unicam SAAD, Unopervolta, Zanotta.
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <br><br> This site is considered as a digital installation, a project himself and is not meant to be an
+            archive of works nor a comprehensive representation of the studio’s practice.
+            <br><br> It is a practice we believe in and a space we want to keep for experimentation from the very
+            beginning. You are navigating the second experiment, published in April 2021. The first experiment was
+            online starting May 2015 to March
+            2021 and can be reached at this <a target="_blank" href="http://ch-ro-mo.com/archivio/2015/">link ↗.</a>
+            <br><br> For a day-to-day study, check out our Instagram. If you need a selection of our latest works,
+            request it by email, adding the motivation and the fields you are interested in.
+        </div>
+        <div class="col-2">
+            INFO
+            <br><br> This site is read-only: it doesn’t collect, store or use any personal data, neither for the
+            activation of the camera which remains visible only to those who decide to activate it. Nothing is stored in
+            our servers.
+            <br><br> For all information about cookies, you can read about it on the legal notice at this
+            <a href="policy.html">link</a>.
+            <br><br> This website has been designed by CH RO MO and coded by <a target="_blank"
+                href="https://www.albguerra.it">Alberto Guerra.</a>
+            <br><br> Typeface in use Mercurio by CH RO MO and <a target="_blank"
+                href="https://www.isntagram.com/albguerra">Alberto Guerra.</a>
+        </div>
     </div>
-    <div class="col-2"></div>
-    <div class="col-2">
-      <br><br>
-      This site is considered as a digital
-      installation, a project himself and is
-      not meant to be an archive of works
-      nor a comprehensive representation
-      of the studio’s practice.
-      <br><br>
-      It is a practice we believe in and
-      a space we want to keep for
-      experimentation from the very
-      beginning.
-      You are navigating the second
-      experiment, published in April 2021.
-      The first experiment was online
-      starting May 2015 to March 2021
-      and can be reached at this link ↗.
-      <br><br>
-      For a day-to-day study, check
-      out our Instagram. If you need
-      a selection of our latest works,
-      request it by email, adding the
-      motivation and the fields you are
-      interested in.
-    </div>
-    <div class="col-2">
 
-      <br><br>
-      This site is read-only: it doesn’t
-      collect, store or use any personal
-      data, neither for the activation of
-      the camera which remains visible
-      only to those who decide to activate
-      it. Nothing is stored in our servers.
-      <br><br>
-      For all information about cookies,
-      you can read about it on the legal
-      notice at this <a href="policy.html">link</a>.
-      <br><br>
-      This website has been designed by
-      CH RO MO and coded by Alberto
-      Guerra.
-      <br><br>
-      Typeface in use Mercurio by CH RO
-      MO and Alberto Guerra.
-    </div>
-  </div>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        varying vec2 vUv;
 
-  <script id="vertex-shader" type="x-shader/x-vertex">
-  varying vec2 vUv;
-
-  void main() {
-    vUv = uv;
-    gl_Position = vec4(position, 1.0);
-  }
-</script>
-  <script id="fragment-shader" type="x-shader/x-fragment">
-  varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = vec4(position, 1.0);
+        }
+    </script>
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        varying vec2 vUv;
   uniform sampler2D dog;
   uniform float delta;
   uniform vec2 mouse;
@@ -287,26 +216,26 @@
     y = (y * 0.6) + vUv.y;
     vec4 texturePixel = texture2D(dog, vec2(x, y));
     
-  //  if (filter) {
-  //  texturePixel.rgb += 0.3;
-  //  texturePixel.rgb *= 1.2;
-  //
-  //  texturePixel.r = min(max(texturePixel.r, 1.0), 0.46);
-  //  texturePixel.g = min(max(texturePixel.g, 0.47), 0.99);
-  //  texturePixel.b = min(max(texturePixel.b, 0.78), 0.92);
-  // }
+    if (filter) {
+      texturePixel.rgb += 0.3;
+      texturePixel.rgb *= 1.2;
+
+      texturePixel.r = min(max(texturePixel.r, 1.0), 0.46);
+      texturePixel.g = min(max(texturePixel.g, 0.47), 0.99);
+      texturePixel.b = min(max(texturePixel.b, 0.78), 0.92);
+    }
     
     gl_FragColor = texturePixel;
-  }
-</script>
-  <!-- partial -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
-  <script src="./js/script.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  }    </script>
 
+    
+    <!-- partial -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
+    <script src="./js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
